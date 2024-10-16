@@ -6,12 +6,12 @@
 
 html,
 body {
-    min-width: 900px;
+    min-width: 320px;
     background-color: #fff;
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-
+    height: 100vh;
 }
 
 .header {
@@ -92,9 +92,33 @@ body {
 
 .footer {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 20px;
     background-color: black;
-    height: 40px;
+    height: 100px;
+}
+
+.footer-yes{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400px;
+    cursor: pointer;
+}
+.footer-no{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400px;
+    cursor: pointer;
+}
+.footer-yes:hover{
+    color: yellow;
+    cursor: pointer;
+}
+.footer-no:hover{
+    color: red;
+    cursor: pointer;
 }
 
 @media (max-width: 1700px) {
@@ -115,8 +139,65 @@ body {
     .main-left {
         width: 350px;
     }
+    .main-right {
+        grid-template-columns: repeat(2, 250px);
+    }
+    .main-pic {
+        width: 250px;
+    }
+}
+
+@media (max-width: 800px) {
+    .enlarged {
+        left: 20%;
+        transform: translate(-50%, -50%) scale(2); 
+    }
+    .header {
+        flex-direction: column;
+        height: 120px;
+    }
+    .main-left {
+        width: 250px;
+    }
+
+}
+@media (max-width: 730px) {
+    .enlarged {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2); 
+    }
+    .head-title{
+        font-size: 20px;
+    }
+    .main-title {
+        font-size: 50px;
+    }
+    
+    .main-text {
+        font-size: 15px;
+    }
+    .main-left {
+        width: 180px;
+    }
 
     .main-right {
-        grid-template-columns: repeat(2, 270px);
+        grid-template-columns: repeat(1, 250px);
+    }
+}
+@media (max-width: 390px) {
+    .enlarged {
+        top: 20%;
+        transform: translate(-50%, -50%) scale(1.5); 
+    }
+    .main-left {
+        width: 150px;
+    }
+
+    .main-right {
+        grid-template-columns: repeat(1, 200px);
+    }
+    .main-pic {
+        width: 200px;
     }
 }

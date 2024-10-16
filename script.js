@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagesContainer = document.querySelector('.main-right');
     const titles = document.querySelectorAll('.head-title');
     let activeTitle = document.querySelector('.head-title.selected'); 
+    const yesAnswer = document.querySelector('.footer-yes');
+    const noAnswer = document.querySelector('.footer-no');
 
 
     const loadImages = (category) => {
@@ -76,21 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
     imagesContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('main-pic')) {
             const enlargedImage = document.querySelector('.enlarged');
-
-
             if (enlargedImage) {
                 enlargedImage.remove();
                 return; 
             }
-
             const newEnlargedImage = event.target.cloneNode(); 
             newEnlargedImage.classList.add('enlarged');
             document.body.appendChild(newEnlargedImage); 
-
             newEnlargedImage.addEventListener('click', () => {
                 newEnlargedImage.remove(); 
             });
         }
     });
+
+    yesAnswer.addEventListener('click', () => {
+        alert('Thank you, darling');
+    });
+
+    noAnswer.addEventListener('click', () => {
+        alert("If it's a no, let it be so")
+    } )
 
 });
